@@ -1,6 +1,7 @@
 <?php 
 	if ( !defined('ABSPATH')) exit;
 	get_header(); 
+	setPostViews(get_the_ID());
 ?>
 <div class="root container"> 
 	<div class="BasicPost">
@@ -17,7 +18,7 @@
 	</div>
 
 	<div class="sidebar BasicPostSideBar">
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Basic Post Sidebar') ):  endif;?>
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Other name this  Sidebar') ):  endif;?>
 	</div>
 </div>
 

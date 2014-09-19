@@ -37,7 +37,7 @@
 				} 
 				 ?>
 				<h4 class="FrontPostTitle"><?php the_title(); ?></h4>
-				<h5><?php $author = get_the_author();  echo "$author";?> <?php echo get_the_date(); ?></h5>
+				<h5 class="FrontPostAuthor"><?php $author = get_the_author();  echo "$author";?> <?php echo get_the_date(); ?></h5>
 				<?php the_excerpt() ?>
 
 				<h6 class="FrontPostInfo"><?php comments_number( 'no commentss', 'one comments', '% commentss' ); ?> * <?php echo getPostViews(get_the_ID()); ?></h6>

@@ -1,18 +1,24 @@
 <?php 
+/*
+* Category Template: Custom Category
+*/
     if ( !defined('ABSPATH')) exit;
     get_header(); 
 ?>
 
 <div class="root container <?php $category = get_the_category();echo $category[0]->slug; ?>"> 
-    <div class="BasicCategory">
+    <div class="CustomCategory">
         <?php 
             if (have_posts()) :
             while (have_posts()) :
             the_post(); 
+        ?>
 
+        <div class="thepost"  style="background: #ccc; margin-bottom: 20px;">
+        <?php
                 /// Getting the Image 
                 if ( has_post_thumbnail() ) {
-                    the_post_thumbnail();
+                    the_post_thumbnail('medium-thumb');
                 } 
 
                 else{
@@ -36,7 +42,7 @@
             * 
             <?php echo getPostViews(get_the_ID()); ?>
         </h6>
-
+    </div>
     <?php
         endwhile; 
         endif; 
