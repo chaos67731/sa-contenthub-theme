@@ -52,7 +52,7 @@ if ( function_exists('register_sidebar') )
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => 'Home Page Pools',
-	'description' => "This is a alternate incase the default one will not do",
+	'description' => "Used To display Pools on the Home Page",
 	'before_widget' => '<div id="%1$s" class="widget %2$s">', 
 	'after_widget' => '</div>', 
 	'before_title' => '<h3 class="widgettitle">', 
@@ -61,8 +61,8 @@ if ( function_exists('register_sidebar') )
  
     if ( function_exists('register_sidebar') )
     register_sidebar(array(
-    'name' =>'Jobs-Description Sidebar',
-    'description' => "This is for post only.",
+    'name' =>'Basic Post Sidebar',
+    'description' => "Basic Post Sidebar.",
     'before_widget' => '<div id="%1$s" class="widget %2$s">', 
     'after_widget' => '</div>', 
     'before_title' => '<h3 class="widgettitle">', 

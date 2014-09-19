@@ -1,30 +1,36 @@
-<?php
+<?php 
     if ( !defined('ABSPATH')) exit;
     get_header(); 
 ?>
-    <?php 
-        if (have_posts()) :
-        while (have_posts()) :
-        the_post(); 
-    ?>
-        <div class="entry">
-            <div class="entry__title">
-                <h3 class="job-title"><?php the_title(); ?></h3>
-                <?php the_excerpt(); ?>
-            </div>
 
-            <div class="entry__link">
-                <a href="<?php the_permalink(); ?>" class="link blue border-blue">
-                    Keep Reading »
-                </a>
-            </div>
-        </div>
+<div class="root container"> 
+    <div class="BasicLoop">
+        <?php 
+            if (have_posts()) :
+            while (have_posts()) :
+            the_post(); 
 
-    <?php 
+                if ( has_post_thumbnail() ) {
+                    the_post_thumbnail();
+                } 
+
+                else{
+                    echo '<img width="150" height="111" src="' . get_template_directory_uri() . '/images/logo.png">';
+                }
+        ?>
+
+        <h3 class="job-title"><?php the_title(); ?></h3>
+        <?php the_excerpt(); ?>
+
+    <?php
         endwhile; 
         endif; 
     ?>
+    </div>
 
-    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Page Sidebar') ):  endif;?>
- 
-<?php get_footer(); ?>  
+    <div class="BasicLoop sidebar">
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Page Sidebar') ):  endif;?>
+    </div>
+</div>
+
+<?php get_footer(); ?>
