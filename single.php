@@ -23,6 +23,7 @@
 			<?php 
 			endwhile; 
 			endif; 
+			
 			comments_template();
 			?>
 

@@ -19,6 +19,8 @@ if ( !defined('ABSPATH')) exit;
     include  'extend/add-thumbnails-preview.php';
 // Custom WP Login - link and image  
     include  'extend/wp-custom-login.php';
+// Custom Theme settings   
+    include  'extend/custom-settings.php';
 
 // Remove Wordpress Version 
 remove_action('wp_head', 'wp_generator');
@@ -34,4 +36,13 @@ function no_more_jquery(){
     ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . 
     "://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js", false, null);
     wp_enqueue_script('jquery');
+}
+
+
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+
+function remove_width_attribute( $html ) {
+   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+   return $html;
 }
