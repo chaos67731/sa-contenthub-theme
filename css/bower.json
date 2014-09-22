@@ -1,5 +1,7 @@
 {
-    "name": "inuit.css",
-    "version": "5.0.1",
-    "dependencies": {}
+  "name": "inuit.css",
+  "version": "5.0.1",
+  "dependencies": {
+    "typeplate-starter-kit": "~1.1.4"
+  }
 }

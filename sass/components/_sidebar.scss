@@ -1,0 +1,13 @@
+/*------------------------------------*\
+  Site Sidebar
+\*------------------------------------*/
+/**
+ * Description
+ */
+
+ .SiteSidebar {
+    @include mq(tablet){
+        float: left;
+        width: 280px;
+    }
+ }

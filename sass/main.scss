@@ -9,105 +9,125 @@ Tags: Infostream Group
 Change Log : 1
 */
 
-// We import types of file in the following order:
-//
-// Settings -- Sass vars, etc.
-// Tools -- Functions and mixins.
-// Generic -- Generic, high-level styling, like resets, etc.
-// Base -- Unclasses HTML elements (e.g. `h2`, `ul`).
-// Object -- Objects and abstractions.
-// Components -- Your designed UI elements (inuitcss includes none of these).
-// Trumps -- Overrides and helper classes.
-//
-// These shearing layers are what make inuitcss so scalable.
-
-@import "bower_components/inuit-defaults/settings.defaults";
-
 // We can add our own settings.
-@import "settings.colors";
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+@import "bower_components/normalize-css/normalize.css";
+@import "bower_components/sass-mq/mq";
+@import "config/vars-typeplate";
+@import "bower_components/typeplate-starter-kit/scss/typeplate";
+@import "settings.mq";
+@import "bower_components/bourbon/dist/bourbon";
 
 
-
-
-@import "bower_components/inuit-functions/tools.functions";
-@import "bower_components/inuit-mixins/tools.mixins";
-
-// We can import our own partials in the relevant locations/layers. We name them
-// in the _<layer>.<file>.scss format.
-@import "tools.aliases";
-
-
-
-
-
-@import "bower_components/inuit-normalize/generic.normalize";
-@import "bower_components/inuit-reset/generic.reset";
-@import "bower_components/inuit-box-sizing/generic.box-sizing";
-@import "bower_components/inuit-shared/generic.shared";
-
-
-
-
-
-@import "bower_components/inuit-page/base.page";
-
-// We can intersperse our own CSS in and amongst inuitcss imports.
-html {
-    padding: $spacing-unit;
+body {
+    @include mq(tablet){
+        font-size: 16px;
+    }
 }
 
-a {
-    color: $color-links;
+
+.SiteSidebar .menu {
+    list-style: none;
+
+    li {
+        display: inline;
+    }
 }
 
-@import "bower_components/inuit-paragraphs/base.paragraphs";
-@import "bower_components/inuit-headings/base.headings";
-@import "bower_components/inuit-lists/base.lists";
+.headerlinks {
+    @include mq(tablet){ 
+        float: right;
+    }
+}
 
-@import "bower_components/inuit-images/base.images";
+.l-container {
+    max-width: 85em;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.FrontPage {
+    display: table;
+    width: 100%;
+
+    .left, .right {
+        @include mq(tablet){
+            display: table-cell;
+        }
+    }
+
+    .right {
+        @include mq(tablet){
+            width: 320px;
+        }
+    }
+}
+
+.FrontPage .Section .FrontPost {
+    @include clearfix;
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    padding-right: 2%;
+    border-right: 1px solid #969696;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+#menu-global-categories {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include mq(tablet){
+        height: 44px;
+    }
+
+    @include mq(tablet){
+        > li {
+            display: inline-block;
+        }
+    }
+}
+
+.menu-global-categories-container {
+    background-color: #000;
+
+    .menu li {
+        line-height: 44px;
+    }
+    .menu a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 0.8em;
+
+        @include mq(tablet){
+            padding: 0 .5rem;
+        }
+    }
+}
 
 
 
+h1 {
+    font-weight: 300;
+}
 
+.SectionTitle {
+    font-size: 1.2rem;
+    color: #9a0013;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 1rem 0 0.45rem;
+    padding-bottom: 0.45rem;
 
-@import "bower_components/inuit-layout/objects.layout";
-// @import "bower_components/inuit-bare-list/objects.bare-list";
-// @import "bower_components/inuit-block-list/objects.block-list";
-
-// Override and enable settings and features inline, just before their partial
-// is imported.
-$inuit-enable-ui-list--small:   true;
-// @import "bower_components/inuit-ui-list/objects.ui-list";
-@import "bower_components/inuit-tables/objects.tables";
-
-$inuit-enable-media--large: true;
-$inuit-enable-media--rev:   true;
-@import "bower_components/inuit-media/objects.media";
-
-$inuit-enable-flag--large:  true;
-$inuit-enable-flag--rev:    true;
-@import "bower_components/inuit-flag/objects.flag";
-@import "bower_components/inuit-box/objects.box";
-
-$inuit-enable-btn--large:   true;
-$inuit-btn-border-width:    2px;
-@import "bower_components/inuit-buttons/objects.buttons";
-
-@import "bower_components/inuit-tabs/objects.tabs"; 
-
-// @import "components.buttons";
-
-@import "bower_components/inuit-clearfix/trumps.clearfix";
-@import "bower_components/inuit-widths/trumps.widths";
-
-$inuit-enable-margins:          true;
-$inuit-enable-margins--small:   true;
-$inuit-enable-margins--large:   true;
-$inuit-enable-margins--none:    true;
-
-$inuit-enable-paddings:         true;
-$inuit-enable-paddings--small:  true;
-$inuit-enable-paddings--large:  true;
-$inuit-enable-paddings--none:   true;
-
-@import "bower_components/inuit-spacing/trumps.spacing";
+    border-bottom: 1px solid;
+}

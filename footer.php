@@ -10,6 +10,7 @@ if ( !defined('ABSPATH')) exit;
 	    </span> 
 	  </div>
 	</div>
+</div>
 
   </body>
 </html>

@@ -29,26 +29,23 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-<div class="top-bar">
-  <div class="top-bar__logo">
-  <a href="/" title="<?php bloginfo('name');  echo ' - ' ; bloginfo( 'description', 'display' ); ?>">
-    <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" />
-  </a>
-  </div>
-
-  <div class="top-bar__menu">
-    <?php //wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-    <div class="headerlinks">
-      <span><?php wp_register(' ', ' '); ?></span>
-      <span><?php wp_loginout(' ', ' '); ?></span>
+<div class="l-container">
+  <div class="top-bar">
+    <div class="top-bar__logo">
+    <a href="/" title="<?php bloginfo('name');  echo ' - ' ; bloginfo( 'description', 'display' ); ?>">
+      <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" />
+    </a>
     </div>
+    <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
   </div>
-</div>
 
 
 
 <div class="SiteSidebar">
-  <?php wp_nav_menu( array( 'theme_location' => 'side-menu' ) ); ?>
-  <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Home Page Widgets') ):  endif;?>
+      <div class="top-bar__menu">
+      <div class="headerlinks">
+        <span><?php wp_register(' ', ' '); ?></span>
+        <span><?php wp_loginout(' ', ' '); ?></span>
+      </div>
+    </div>
 </div>
