@@ -13,6 +13,8 @@
 			endwhile; 
 			endif; 
 
+			echo the_author_posts_link();
+
 			comments_template();
 		?>
 	</div>
