@@ -41,11 +41,12 @@ function no_more_jquery(){
 }
 
 
-add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
-add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
 
-function remove_width_attribute( $html ) {
-    $html = preg_replace('/(?:<img.*)((width|height)="\d*"\s)(?:\/>|>)/', "", $html);
+function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
 }
+
+
 
