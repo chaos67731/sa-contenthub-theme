@@ -1,0 +1,13 @@
+/*------------------------------------*\
+  Post-PhotoHero
+\*------------------------------------*/
+/**
+ * Post Photos that show on the head of the post. 
+ */
+
+ .Post-PhotoHero {
+    margin: 0;
+    > img {
+        width: 100%;
+    }
+ }

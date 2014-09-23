@@ -19,8 +19,26 @@ html {
 body {
   font-family: Lato;
   font-size: 1.6em;
-  line-height: 1.5;
+  line-height: 1.414;
   color: #333;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #b50011;
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  text-rendering: optimizeLegibility;
+  /*  voodoo to enable ligatures and kerning | https://developer.mozilla.org/en-US/docs/CSS/text-rendering */
 }
 
 /*------------------------------------*\
@@ -31,6 +49,12 @@ body {
  */
 .Post-Header {
   margin-top: 2rem;
+  padding: 0 1rem;
+}
+@media all and (min-width: 46.25em) {
+  .Post-Header {
+    padding: 0;
+  }
 }
 
 .Post-Headline {
@@ -59,59 +83,86 @@ body {
 @media all and (min-width: 46.25em) {
   .Post-Body .Post-SideBar {
     width: 250px;
+    padding-left: 2rem;
   }
 }
 
-.SiteSidebar .menu {
-  list-style: none;
+/*------------------------------------*\
+  Post-PhotoHero
+\*------------------------------------*/
+/**
+ * Post Photos that show on the head of the post. 
+ */
+.Post-PhotoHero {
+  margin: 0;
 }
-.SiteSidebar .menu li {
-  display: inline;
+.Post-PhotoHero > img {
+  width: 100%;
 }
 
-@media all and (min-width: 46.25em) {
-  .headerlinks {
-    float: right;
-  }
+/*------------------------------------*\
+  Commentlist
+\*------------------------------------*/
+/**
+ * Description
+ */
+.commentlist {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-.l-container {
-  max-width: 65em;
-  margin: 0 auto;
+/*------------------------------------*\
+  FrontPost
+\*------------------------------------*/
+/**
+ * Front Post
+ */
+.FrontPost {
   position: relative;
-}
-
-.FrontPage {
-  display: table;
-  width: 100%;
+  padding-left: 12rem;
 }
 @media all and (min-width: 46.25em) {
-  .FrontPage .left, .FrontPage .right {
-    display: table-cell;
+  .FrontPost {
+    padding-left: 32rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #c5c5c5;
   }
+}
+.FrontPost > img {
+  position: absolute;
+  left: 0;
+  width: 10.4rem;
 }
 @media all and (min-width: 46.25em) {
-  .FrontPage .right {
-    width: 320px;
+  .FrontPost > img {
+    width: 30.4rem;
   }
 }
-
-.FrontPage .Section .FrontPost {
-  float: left;
-  width: 33.333%;
-  padding: 0.85rem;
-}
-.FrontPage .Section .FrontPost:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.FrontPage .Section .FrontPost img {
-  display: block;
-  width: 100%;
-  height: auto;
+.FrontPost p {
+  font-size: 1.5rem;
 }
 
+.FrontPostTitle {
+  font-size: 2.588rem;
+  font-weight: 300;
+  line-height: 1.186;
+  margin-bottom: 0.707em;
+}
+.FrontPostTitle a {
+  color: inherit;
+  font-weight: inherit;
+}
+.FrontPostTitle a:hover {
+  color: #b50011;
+}
+
+/*------------------------------------*\
+  Global navigation
+\*------------------------------------*/
+/**
+ * Description
+ */
 #menu-global-categories {
   list-style: none;
   margin: 0;
@@ -149,6 +200,53 @@ body {
   }
 }
 
+.Global-Nav {
+  background-color: #272727;
+}
+@media all and (min-width: 46.25em) {
+  .Global-Nav {
+    padding-top: 4rem;
+  }
+}
+
+.Global-logo {
+  float: left;
+}
+
+.SiteSidebar .menu {
+  list-style: none;
+}
+.SiteSidebar .menu li {
+  display: inline;
+}
+
+@media all and (min-width: 46.25em) {
+  .headerlinks {
+    float: right;
+  }
+}
+
+.l-container, .Global-Menu {
+  max-width: 65em;
+  margin: 0 auto;
+  position: relative;
+}
+
+.FrontPage {
+  display: table;
+  width: 100%;
+}
+@media all and (min-width: 46.25em) {
+  .FrontPage .left, .FrontPage .right {
+    display: table-cell;
+  }
+}
+@media all and (min-width: 46.25em) {
+  .FrontPage .right {
+    width: 320px;
+  }
+}
+
 .Section:after {
   content: "";
   display: table;
@@ -156,7 +254,7 @@ body {
 }
 
 .SectionTitle {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: #9a0013;
   text-transform: uppercase;
   font-weight: 300;

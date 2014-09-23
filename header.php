@@ -29,18 +29,21 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="l-container">
-  <div class="top-bar">
-    <div class="top-bar__logo">
+  <div class="Global-Nav">
+    <div class="Global-logo">
     <a href="/" title="<?php bloginfo('name');  echo ' - ' ; bloginfo( 'description', 'display' ); ?>">
       <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" />
     </a>
     </div>
-    <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+    <div class="Global-Menu">
+      <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+      <?php get_search_form(); ?>
+    </div>
   </div>
 
 
 
+<div class="l-container">
 <div class="SiteSidebar">
       <div class="top-bar__menu">
       <div class="headerlinks">

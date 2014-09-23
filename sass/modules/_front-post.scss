@@ -1,0 +1,53 @@
+/*------------------------------------*\
+  FrontPost
+\*------------------------------------*/
+/**
+ * Front Post
+ */
+
+ .FrontPost {
+    position: relative;
+    padding-left: 12rem;
+    
+
+    @include mq(tablet){
+        padding-left: 32rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #c5c5c5;
+    }
+
+    > img {
+        position: absolute;
+        left: 0;
+        width: 12rem - 1.6;
+
+        @include mq(tablet){
+            width: 32rem - 1.6;
+        }
+    }
+
+    p {
+        font-size: 1.5rem;
+
+        // @include mq(tablet){
+        //     font-size: 1.6rem;
+        // }
+    }
+}
+
+.FrontPostTitle {
+    font-size: 2.40rem + 0.188;
+    font-weight: 300;
+    line-height: 1.061 + 0.125;
+    margin-bottom: 0.707em;
+
+    a {
+        color: inherit;
+        font-weight: inherit;
+
+        &:hover {
+            color: #b50011;
+        }
+    }
+}
+

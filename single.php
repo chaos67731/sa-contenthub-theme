@@ -29,8 +29,10 @@
 
 					<?php 
 						the_content();
-						comments_template();
 					?>
+					<div class="Post-Comments">
+						<?php comments_template(); ?>
+					</div>
 				</div>
 				
 				<div class="Post-SideBar">

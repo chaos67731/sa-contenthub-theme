@@ -1,0 +1,58 @@
+/*------------------------------------*\
+  Entry
+\*------------------------------------*/
+/**
+ * Content Article
+ */
+
+.Post {
+
+}
+
+ .Post-Header {
+      margin-top: 2rem;
+      padding: 0 1rem;
+
+      @include mq(tablet){
+        padding: 0;
+      }
+ }
+
+ .Post-Headline {
+    font-weight: 300;
+    line-height: 1.061;
+    margin-bottom: 0.531em;
+    
+    @include mq(tablet){
+        font-size: 4.798rem;
+    }
+ }
+
+ .Post-byline {
+    // margin-top: 
+ }
+
+ .Entry-Body {
+
+ }
+
+ .Post-Body {
+    @include mq(tablet){
+        display: table;
+        width: 100%;
+    }
+
+    .Post-Content, .Post-SideBar {
+        @include mq(tablet){
+            display: table-cell;
+            vertical-align: top;
+        }
+    }
+
+    .Post-SideBar {
+        @include mq(tablet){
+            width: 250px;
+            padding-left: 2 * 1rem;
+        }
+    }
+ }

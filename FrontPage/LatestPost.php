@@ -23,7 +23,7 @@
                 }
                 /// END Getting the image 
 				 ?>
-				<h4 class="FrontPostTitle"><?php the_title(); ?></h4>
+				<h4 class="FrontPostTitle"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h4>
 				<h5 class="FrontPostAuthor"><?php $author = get_the_author();  echo "$author";?> <?php echo get_the_date(); ?></h5>
 				<?php the_excerpt() ?>
 

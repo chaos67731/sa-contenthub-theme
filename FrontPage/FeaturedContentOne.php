@@ -36,7 +36,7 @@
                 /// END Getting the image 
 			 ?>
 		</a>
-		<h4 class="FrontPostTitle"><?php the_title(); ?></h4>
+		<h4 class="FrontPostTitle"><a href="<?php get_permalink(); ?>"><?php the_title(); ?></a></h4>
 		<h6 class="FrontPostInfo"><?php comments_number( 'no commentss', 'one comments', '% commentss' ); ?> * <?php echo getPostViews(get_the_ID()); ?></h6>
 	</div>
 	<?php endwhile; ?>
