@@ -6,15 +6,15 @@
 <div class="root container"> 
 	<div class="BasicPost">
 		<?php 
+			echo get_post_meta( $post->ID, 'custom_post_heading', true );
+			echo get_post_meta( $post->ID, 'custome_post_summary', true );
+
 			if (have_posts()) :
 			while (have_posts()) :
 			the_post(); 
 				the_content();  
 			endwhile; 
 			endif; 
-
-			echo the_author_posts_link();
-
 			comments_template();
 		?>
 	</div>

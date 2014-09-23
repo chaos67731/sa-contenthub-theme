@@ -21,6 +21,8 @@ if ( !defined('ABSPATH')) exit;
     include  'extend/wp-custom-login.php';
 // Custom Theme settings   
     include  'extend/custom-settings.php';
+// Custom Theme settings   
+    include  'extend/summary-post.php';
 
 // Remove Wordpress Version 
 remove_action('wp_head', 'wp_generator');
@@ -43,6 +45,7 @@ add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
 add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
 
 function remove_width_attribute( $html ) {
-   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
-   return $html;
+    $html = preg_replace('/(?:<img.*)((width|height)="\d*"\s)(?:\/>|>)/', "", $html);
+    return $html;
 }
+
