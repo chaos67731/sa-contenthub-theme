@@ -14,10 +14,11 @@ Change Log : 1
 @import "bower_components/normalize-css/normalize.css";
 @import "bower_components/sass-mq/mq";
 @import "config/vars-typeplate";
-@import "bower_components/typeplate-starter-kit/scss/typeplate";
+//@import "bower_components/typeplate-starter-kit/scss/typeplate";
 @import "settings.mq";
 @import "bower_components/bourbon/dist/bourbon";
 @import "base/base";
+@import "modules/_entry";
 
 
 
