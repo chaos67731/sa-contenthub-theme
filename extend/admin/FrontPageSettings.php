@@ -1,5 +1,5 @@
 <div class="wrap">
-	<h2>Theme Settings</h2>
+	<h1>Front Page Settings</h1>
 
 	<form method="post" action="options.php">
 		
@@ -38,9 +38,22 @@
 			</div>
 
 
-
-
-
+			<div class="wrap">
+				<table class="form-table widefat">	
+					<tr><h2>Show Sidebar On Front Page</h2></tr>
+						<tr valign="top">
+							<th scope="row">Show</th>
+							<td>
+							<?php
+								function ShowFrontSidebarFunction() {
+									echo '<input name="ShowFrontSidebar" id="gv_thumbnails_insert_into_excerpt" type="checkbox" value="1" class="code" ' . checked( 1, get_option( 'ShowFrontSidebar' ), false ) . ' />';
+								}
+								echo ShowFrontSidebarFunction();
+							?>
+							</td>
+						</tr>
+				</table>
+			</div>		
 
 		<?php 
 

@@ -25,6 +25,11 @@
 				include  'FrontPage/FeaturedContentTwo.php';
 		 	} 
 
+			if(get_option('ShowFrontSidebar') == '1')
+			{
+				include  'FrontPage/ShowFrontSidebar.php';
+		 	} 
+
 			if(get_option('ShowFrontCategoryThree') == '1')
 			{
 				include  'FrontPage/FeaturedContentThree.php';

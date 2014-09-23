@@ -16,6 +16,7 @@ add_action( 'admin_init', 'register_themesettings' );
 
 		register_setting( 'theme-settings-general', 'LatestPostCount' );
 
+		register_setting( 'theme-settings-general', 'ShowFrontSidebar' );
 
 		register_setting( 'theme-settings-general', 'ShowFrontCategoryOne' );
 		register_setting( 'theme-settings-general', 'FrontCategoryOne' );
