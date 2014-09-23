@@ -4,11 +4,11 @@
 	setPostViews(get_the_ID());
 ?>
 <div class="root container"> 
-	<div class="BasicPost">
+	<div class="Post">
 		<?php
 			if (have_posts()) :
 				while (have_posts()) : ?>
-		<header>
+		<header class="Post-Header">
 			<h1 class="Post-Headline"><?php the_title(); ?></h1>
 			<div class="Post-byline">
 				by <h5 class="FrontPostAuthor"><?php the_author_link(); ?> <?php echo get_the_date(); ?></h5>

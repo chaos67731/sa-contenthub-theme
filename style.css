@@ -20,6 +20,7 @@ AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
 LICENSE ....... Creative Commmons Attribution 3.0 (http://creativecommons.org/licenses/by/3.0)
 LICENSE URL ... https://github.com/typeplate/bower/blob/master/license.txt
 */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
 @font-face {
   font-family: "Ampersand";
   src: local("Georgia");
@@ -353,10 +354,16 @@ p + .drop-cap {
  * Extend this object into your markup.
  *
  */
-@media all and (min-width: 46.25em) {
-  body {
-    font-size: 16px;
-  }
+html {
+  font-size: 62.5%;
+  font-size: calc(1em * .625);
+}
+
+body {
+  font-family: Lato;
+  font-size: 1.6em;
+  line-height: 1.5;
+  color: #333;
 }
 
 .SiteSidebar .menu {
@@ -373,7 +380,7 @@ p + .drop-cap {
 }
 
 .l-container {
-  max-width: 85em;
+  max-width: 65em;
   margin: 0 auto;
   position: relative;
 }
@@ -395,10 +402,8 @@ p + .drop-cap {
 
 .FrontPage .Section .FrontPost {
   float: left;
-  width: 48%;
-  margin-right: 2%;
-  padding-right: 2%;
-  border-right: 1px solid #969696;
+  width: 33.333%;
+  padding: 0.85rem;
 }
 .FrontPage .Section .FrontPost:after {
   content: "";
@@ -415,9 +420,11 @@ p + .drop-cap {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: none;
 }
 @media all and (min-width: 46.25em) {
   #menu-global-categories {
+    display: block;
     height: 44px;
   }
 }
@@ -446,8 +453,10 @@ p + .drop-cap {
   }
 }
 
-h1 {
-  font-weight: 300;
+.Section:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .SectionTitle {

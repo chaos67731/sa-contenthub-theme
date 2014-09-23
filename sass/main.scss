@@ -17,13 +17,8 @@ Change Log : 1
 @import "bower_components/typeplate-starter-kit/scss/typeplate";
 @import "settings.mq";
 @import "bower_components/bourbon/dist/bourbon";
+@import "base/base";
 
-
-body {
-    @include mq(tablet){
-        font-size: 16px;
-    }
-}
 
 
 .SiteSidebar .menu {
@@ -41,7 +36,7 @@ body {
 }
 
 .l-container {
-    max-width: 85em;
+    max-width: 65em;
     margin: 0 auto;
     position: relative;
 }
@@ -67,10 +62,8 @@ body {
 .FrontPage .Section .FrontPost {
     @include clearfix;
     float: left;
-    width: 48%;
-    margin-right: 2%;
-    padding-right: 2%;
-    border-right: 1px solid #969696;
+    width: 33.333%;
+    padding: 0.85rem;
 
     img {
         display: block;
@@ -84,8 +77,10 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: none;
 
     @include mq(tablet){
+        display: block;
         height: 44px;
     }
 
@@ -116,9 +111,8 @@ body {
 }
 
 
-
-h1 {
-    font-weight: 300;
+.Section {
+    @include clearfix;
 }
 
 .SectionTitle {

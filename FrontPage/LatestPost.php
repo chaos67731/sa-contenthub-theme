@@ -4,15 +4,6 @@
 		<div class="Section">
 			<h3 class="SectionTitle">
 				Latest Post
-				<span class="SectionTitleRight">
-					<form action="<?php bloginfo('url'); ?>/" method="get">
-						<?php
-						$select = wp_dropdown_categories('show_option_none=Select category&show_count=1&orderby=name&echo=0');
-						$select = preg_replace("#<select([^>]*)>#", "<select $1 onchange='return this.form.submit()'>", $select);
-						echo $select;
-						?>
-					 </form>
-				</span>
 			</h3>
 				
 			<?php
