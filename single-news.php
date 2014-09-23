@@ -26,6 +26,8 @@ Post Theme: NEWS
 			endif; 
 			comments_template();
 		?>
+
+		
 	</div>
 
 	<div class="sidebar BasicPostSideBar">

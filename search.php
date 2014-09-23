@@ -16,9 +16,17 @@
 	 	?>
 	 </div>
 	 <?php
-			endwhile; 
-			endif; 
-		?>
+		endwhile; 
+		else: 
+	?>
+
+
+		NOTHING - Search Again Yo
+
+
+	<?php
+		endif; 
+	?>
 	</div>
 
 	 <div class="BasicPage sidebar">
